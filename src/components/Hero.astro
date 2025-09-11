@@ -1,0 +1,17 @@
+---
+import PersonalImage from '../assets/iam.webp'
+
+const altPersonalImage = 'A stylized portrait of Pavel Borodin'
+---
+
+<div class="mx-32 my-8 px-8 py-16 bg-amber-50 rounded-2xl flex flex-col gap-4">
+  <div class="flex gap-2">
+    <img src={PersonalImage.src} alt={altPersonalImage} width="128" />
+    <div class="text-gray-500 flex flex-col gap-1">
+      <h1 class="text-6xl"><b>Pavel Borodin</b></h1>
+      <h2 class="text-4xl">Full-stack <b>Developer</b></h2>
+    </div>
+  </div>
+
+  <span class="border-1 border-red-500"></span>
+</div>
