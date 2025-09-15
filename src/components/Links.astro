@@ -1,0 +1,40 @@
+---
+import { GlobeIcon, MailIcon } from 'lucide-react'
+import { SiGithub as Github } from '@icons-pack/react-simple-icons'
+import { LinkedInLogoIcon } from '@radix-ui/react-icons'
+---
+
+<div class="flex items-center gap-2" aria-label="Social links">
+  <a
+    class="inline-block bg-purple-600 border border-purple-400 hover:bg-purple-400 hover:border-purple-200 p-1 rounded"
+    href="https://www.google.com/maps/place/Valencia"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <GlobeIcon className="text-white size-4" size={16} />
+  </a>
+  <a
+    class="inline-block bg-purple-600 border border-purple-400 hover:bg-purple-400 hover:border-purple-200 p-1 rounded"
+    href="https://github.com/pavelbeard"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Github className="text-white size-4" size={16} />
+  </a>
+  <a
+    class="inline-block bg-purple-600 border border-purple-400 hover:bg-purple-400 hover:border-purple-200 p-1 rounded"
+    href="https://linkedin.com/in/pavelbeard"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <LinkedInLogoIcon className="text-white size-4" />
+  </a>
+  <a
+    class="inline-block bg-purple-600 border border-purple-400 hover:bg-purple-400 hover:border-purple-200 p-1 rounded"
+    href="mailto:pavelborodin0095@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <MailIcon className="text-white size-4" />
+  </a>
+</div>

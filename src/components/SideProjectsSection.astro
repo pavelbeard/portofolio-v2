@@ -1,0 +1,77 @@
+---
+import TAGS from '@/lib/tags'
+import SideProject from './SideProject.astro'
+import { TagType } from '@/lib/types'
+---
+
+<section class="flex flex-col gap-y-4 text-white" aria-label="Side projects">
+  <h2 class="orbitron-bold text-xl">Side Projects</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <SideProject
+      link="https://www.greenderchat.com"
+      links={[
+        {
+          title: 'GitHub Issue',
+          link: 'https://github.com/midudev/hackaton-clerk-2025/issues/51',
+        },
+      ]}
+      title="Greenderchat.com"
+      description={`
+        Bot-free dating platform rebuilt with Next.js and Clerk. 
+        Hackathon project (Clerk + Midudev).
+      `}
+      tags={[
+        { tag: TAGS.FRAMEWORKS.NEXTJS, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.LIBRARIES.CLERK, tagType: TagType.LIBRARY },
+        { tag: TAGS.INFRASTRUCTURE.VERCEL, tagType: TagType.INFRASTRUCTURE },
+        {
+          tag: TAGS.INFRASTRUCTURE.POSTGRESQL,
+          tagType: TagType.INFRASTRUCTURE,
+        },
+        { tag: TAGS.LANGUAGES.TYPESCRIPT, tagType: TagType.LANGUAGE },
+      ]}
+      active
+    />
+    <SideProject
+      title="Cusec.es"
+      description=`
+        Password manager: Django/PostgreSQL backend (Traefik, Nginx, Docker) + Next.js/Auth.js/Tailwind frontend.
+        Features: master password, 2FA, OAuth2, and location-based security.
+      `
+      tags={[
+        { tag: TAGS.LANGUAGES.PYTHON, tagType: TagType.LANGUAGE },
+        { tag: TAGS.FRAMEWORKS.DJANGO, tagType: TagType.FRAMEWORK },
+        {
+          tag: TAGS.INFRASTRUCTURE.POSTGRESQL,
+          tagType: TagType.INFRASTRUCTURE,
+        },
+        { tag: TAGS.INFRASTRUCTURE.DOCKER, tagType: TagType.INFRASTRUCTURE },
+        { tag: TAGS.FRAMEWORKS.NEXTJS, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.LIBRARIES.AUTHJS, tagType: TagType.LIBRARY },
+        { tag: TAGS.LANGUAGES.TYPESCRIPT, tagType: TagType.LANGUAGE },
+        { tag: TAGS.LANGUAGES.JAVASCRIPT, tagType: TagType.LANGUAGE },
+      ]}
+    />
+    <SideProject
+      links={[
+        {
+          title: 'Bot source code',
+          link: 'https://github.com/pavelbeard/asilo_bot_ts',
+        },
+      ]}
+      title="'Asilo' bot"
+      description=`
+        It has been developed a bot for Telegram using TypeScript, Node.js, Grammy and Cheerio for parsing, specializing in task helping to asylum seekers.
+        The bot provides information from policia.es web site, like appointment methods and how to get it.
+      `
+      tags={[
+        { tag: TAGS.LIBRARIES.GRAMMY, tagType: TagType.LIBRARY },
+        { tag: TAGS.LIBRARIES.CHEERIO, tagType: TagType.LIBRARY },
+        { tag: TAGS.INFRASTRUCTURE.VERCEL, tagType: TagType.INFRASTRUCTURE },
+        { tag: TAGS.LANGUAGES.TYPESCRIPT, tagType: TagType.LANGUAGE },
+        { tag: TAGS.LANGUAGES.JAVASCRIPT, tagType: TagType.LANGUAGE },
+      ]}
+      active
+    />
+  </div>
+</section>

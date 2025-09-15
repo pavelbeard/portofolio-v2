@@ -51,6 +51,27 @@ export function CommandPallete() {
           <CommandGroup heading="Actions" className="">
             <CommandItem>Print this page</CommandItem>
           </CommandGroup>
+          <CommandGroup heading="Links" className="">
+            <CommandItem
+              onClick={() => window.open('https://heavycream.dev', '_blank')}
+            >
+              Personal Website
+            </CommandItem>
+            <CommandItem
+              onClick={() =>
+                window.open('https://github.com/pavelbeard', '_blank')
+              }
+            >
+              Github
+            </CommandItem>
+            <CommandItem
+              onClick={() =>
+                window.open('https://linkedin.com/in/pavelbeard', '_blank')
+              }
+            >
+              LinkedIn
+            </CommandItem>
+          </CommandGroup>
         </CommandList>
       </CommandDialog>
     </>
