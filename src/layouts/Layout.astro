@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
 ---
@@ -15,10 +16,80 @@ import '../styles/global.css'
   <body
     class="bg-[url('../assets/bg.svg')] bg-cover bg-center flex flex-col min-h-screen"
   >
-    <slot />
-    <Footer />
+    <main
+      class="mx-auto scroll-my-12 overflow-auto print:p-12 md:p-16"
+      id="main-content"
+    >
+      <section class="max-w-2xl">
+        <Header />
+        <div class="space-y-10">
+          <slot />
+        </div>
+      </section>
+      <Footer />
+    </main>
   </body>
 </html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Orbitron&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+  .sansation-light {
+    font-family: 'Sansation', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .sansation-regular {
+    font-family: 'Sansation', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .orbitron-regular {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .orbitron-medium {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .orbitron-semibold {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: semi-bold;
+  }
+
+  .orbitron-bold {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+  }
+
+  .orbitron-extrabold {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: extra-bold;
+  }
+
+  .orbitron-black {
+    font-family: 'Orbitron', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: black;
+  }
+</style>
 
 <style is:global>
   * {

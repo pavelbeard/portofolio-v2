@@ -1,13 +1,63 @@
 ---
 import About from '../components/About.astro'
-import Hero from '../components/Hero.astro'
 import Layout from '../layouts/Layout.astro'
+import WorkExperience from '../components/WorkExperience.astro'
+
+import TAGS from '@/lib/tags'
+import { TagType } from '@/lib/types'
+import SideProject from '@/components/SideProject.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <Hero />
   <About />
+  <WorkExperience
+    link="https://catalan-conjugador.vercel.app/verbs"
+    company="ConjuValencia"
+    position="Fullstack Developer"
+    startDate="July 2025"
+    responsibilities={[
+      'The project’s goal is to help valenciano students, offering them a resource, where they can see a verb they need.',
+      'This project uses the AI to translate the verbs in all the moods to spanish.',
+      'In plans is adding some more features like: AI translation from catalan to Spanish and backwards, cards for memorizing the verbs.',
+    ]}
+    tags={[
+      { tag: TAGS.FRAMEWORKS.FASTAPI, tagType: TagType.FRAMEWORK },
+      { tag: TAGS.LANGUAGES.PYTHON, tagType: TagType.LANGUAGE },
+      { tag: TAGS.FRAMEWORKS.NEXTJS, tagType: TagType.FRAMEWORK },
+      { tag: TAGS.INFRASTRUCTURE.MONGODB, tagType: TagType.INFRASTRUCTURE },
+      { tag: TAGS.LIBRARIES.GEMINIAI, tagType: TagType.LIBRARY },
+      { tag: TAGS.INFRASTRUCTURE.VERCEL, tagType: TagType.INFRASTRUCTURE },
+    ]}
+  />
+  <WorkExperience
+    link="https://www.greenderchat.com"
+    company="Greenderchat.com"
+    position="Fullstack Developer"
+    startDate="June 2025"
+    endDate="Present"
+    responsibilities={[
+      'It had been developing with Node.js (Express) and React before participating in a hackathon.',
+      'Currently, the project is being redeveloped using Next.js and Clerk for authentication.',
+      'The project’s goal is to create a safe space for dating without bots and other malicious activity.',
+      'It was developing within a hackathon Clerk + Midudev. https://github.com/midudev/hackaton-clerk-2025/issues/51',
+    ]}
+    tags={[
+      { tag: TAGS.FRAMEWORKS.NEXTJS, tagType: TagType.FRAMEWORK },
+      { tag: TAGS.LIBRARIES.CLERK, tagType: TagType.LIBRARY },
+      { tag: TAGS.INFRASTRUCTURE.VERCEL, tagType: TagType.INFRASTRUCTURE },
+      { tag: TAGS.INFRASTRUCTURE.POSTGRESQL, tagType: TagType.INFRASTRUCTURE },
+      { tag: TAGS.LANGUAGES.TYPESCRIPT, tagType: TagType.LANGUAGE },
+    ]}
+  />
+  <SideProject
+    title="Cusec.es"
+    description=`
+        Developed a password manager using Django, PostgreSQL, Traefik, Nginx, Docker as a backend and Next.js, Auth.js, Tailwind CSS as a frontend. 
+        Implemented master-passwords, 2FA, Oauth2 as an authentication way. 
+        This project uses user location determination to improve user’s security.
+      `
+  />
 </Layout>

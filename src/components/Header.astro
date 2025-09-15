@@ -1,0 +1,26 @@
+---
+import PersonalImage from '../assets/iam.webp'
+import { GlobeIcon } from '@radix-ui/react-icons'
+
+const altPersonalImage = 'A stylized portrait of Pavel Borodin'
+const mapLink = 'https://www.google.com/maps/place/Valencia'
+---
+
+<header
+  class="flex justify-between items-center gap-12 mb-8 text-white"
+>
+  <div class="flex flex-col mb-4 gap-4">
+    <h1 class="text-4xl orbitron-bold">Pavel Borodin</h1>
+    <p class="max-w-md sansation-light">
+      Full-stack developer with a passion for creating dynamic and responsive
+      web applications.
+    </p>
+    <div class="max-w-md flex items-center gap-2 text-sm">
+      <GlobeIcon />
+      <a class="orbitron-regular hover:underline" href={mapLink}>Valencia, Spain</a>
+    </div>
+  </div>
+  <span>
+    <img src={PersonalImage.src} alt={altPersonalImage} width="128" />
+  </span>
+</header>

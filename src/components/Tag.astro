@@ -1,0 +1,19 @@
+---
+import { TagType } from '@/lib/types'
+import { cn } from '@/lib/utils'
+
+const tagType = Astro.props.tagType as TagType
+const name = Astro.props.name
+---
+
+<div
+  class={cn(
+    'inline-flex text-nowrap bg-blue-600 text-white text-xs max-w-xl px-1.5 py-0.5 rounded border sansation-regular',
+    tagType === TagType.LANGUAGE && 'bg-green-700 border-green-400',
+    tagType === TagType.FRAMEWORK && 'bg-purple-700 border-purple-400',
+    tagType === TagType.LIBRARY && 'bg-yellow-700 border-yellow-400',
+    tagType === TagType.INFRASTRUCTURE && 'bg-red-700 border-red-400'
+  )}
+>
+  {name}
+</div>

@@ -1,1 +1,13 @@
-<footer>Footer</footer>
+---
+import { Button } from './ui/button'
+import { CommandPallete } from './CommandPallete'
+---
+
+<footer
+  class="print:hidden fixed bottom-0 left-0 right-0 p-2 border-t-1 border-t-purple-400 bg-purple-600 text-white"
+  aria-label="Quick links"
+>
+  <p class="flex items-center text-sm gap-1 place-content-center">
+    <CommandPallete client:load />
+  </p>
+</footer>

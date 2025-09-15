@@ -1,0 +1,53 @@
+---
+import Tag from './Tag.astro'
+
+const company = Astro.props.company
+const position = Astro.props.position
+const startDate = Astro.props.startDate
+const endDate = Astro.props.endDate
+const responsibilities = Astro.props.responsibilities as string[]
+const tags = Astro.props.tags as { tag: string; tagType: string }[]
+const link = Astro.props.link as string | undefined
+---
+
+<article class="text-white space-y-2">
+  <header class="flex flex-col gap-y-1">
+    <div class="flex items-center gap-x-4">
+      {
+        link ? (
+          <a
+            href={link}
+            class="orbitron-regular flex-0 text-[16px] hover:underline"
+            target="_blank"
+            aria-label={company + ' company'}
+          >
+            {company}
+          </a>
+        ) : (
+          <h2
+            class="orbitron-regular flex-0 text-[16px]"
+            aria-label={company + ' company'}
+          >
+            {company}
+          </h2>
+        )
+      }
+      <div class="flex items-center gap-x-1 flex-0">
+        {tags.map(({ tag, tagType }) => <Tag tagType={tagType} name={tag} />)}
+      </div>
+      <p class="flex-1 text-right text-sm sansation-regular">
+        {
+          endDate !== undefined && endDate !== ''
+            ? startDate + ' - ' + endDate
+            : startDate
+        }
+      </p>
+    </div>
+
+    <h3 class="text-sm sansation-regular">{position}</h3>
+  </header>
+
+  <ul class="list-disc list-inside space-y-1">
+    {responsibilities.map((responsibility) => <li class="sansation-light text-xs">{responsibility}</li>)}
+  </ul>
+</article>
