@@ -1,0 +1,87 @@
+---
+import TAGS from '@/lib/tags'
+import WorkExperience from './WorkExperience.astro'
+import { TagType } from '@/lib/types'
+---
+
+<section class="flex flex-col gap-y-4 text-white" aria-label="Work experience">
+  <h2 class="orbitron-bold text-xl">Work Experience</h2>
+  <div class="space-y-10">
+    <WorkExperience
+      link="https://allfunds.com"
+      company="All Funds"
+      position="Developer Specialist"
+      startDate="October 2025"
+      endDate="Present"
+      responsibilities={['']}
+      tags={[
+        { tag: TAGS.LIBRARIES.REACT, tagType: TagType.LIBRARY },
+        { tag: TAGS.FRAMEWORKS.EXPRESS, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.INFRASTRUCTURE.MONGODB, tagType: TagType.INFRASTRUCTURE },
+        { tag: TAGS.LANGUAGES.NODEJS, tagType: TagType.LANGUAGE },
+      ]}
+    />
+    <WorkExperience
+      link="https://catalan-conjugador.vercel.app/verbs"
+      company="ConjuValencia"
+      position="Fullstack Developer"
+      startDate="July 2025"
+      responsibilities={[
+        'The project’s goal is to help valenciano students, offering them a resource, where they can see a verb they need.',
+        'This project uses the AI to translate the verbs in all the moods to spanish.',
+        'In plans is adding some more features like: AI translation from catalan to Spanish and backwards, cards for memorizing the verbs.',
+      ]}
+      tags={[
+        { tag: TAGS.FRAMEWORKS.FASTAPI, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.LANGUAGES.PYTHON, tagType: TagType.LANGUAGE },
+        { tag: TAGS.FRAMEWORKS.NEXTJS, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.INFRASTRUCTURE.MONGODB, tagType: TagType.INFRASTRUCTURE },
+        { tag: TAGS.LIBRARIES.GEMINIAI, tagType: TagType.LIBRARY },
+        { tag: TAGS.INFRASTRUCTURE.VERCEL, tagType: TagType.INFRASTRUCTURE },
+      ]}
+    />
+    <WorkExperience
+      company="Timshee.ru"
+      position="Fullstack Developer"
+      startDate="March 2024"
+      endDate="September 2024"
+      responsibilities={[
+        'Implemented a full cycle from the selection items stage until the payment.',
+        'Used a CMS for this project, Django Framework, that it allowed to manage objects and data in a simple way. Also, it can create, read, update and delete data.',
+        'Used Traefik as a reverse-proxy server, which allowed it to launch the project and apply SSL certificates quickly, with almost no advanced configuration required.',
+      ]}
+      tags={[
+        { tag: TAGS.FRAMEWORKS.DJANGO, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.LANGUAGES.PYTHON, tagType: TagType.LANGUAGE },
+        {
+          tag: TAGS.INFRASTRUCTURE.POSTGRESQL,
+          tagType: TagType.INFRASTRUCTURE,
+        },
+        { tag: TAGS.LIBRARIES.REACT, tagType: TagType.LIBRARY },
+        { tag: TAGS.INFRASTRUCTURE.DOCKER, tagType: TagType.INFRASTRUCTURE },
+      ]}
+    />
+
+    <WorkExperience
+      company="Russian railways"
+      position="Fullstack Developer"
+      startDate="April 2022"
+      endDate="June 2023"
+      responsibilities={[
+        'Developed an IVA Dashboard Control Panel, which manages and monitors hardware/software processes and events of a videoconferencing system. For this project, it’s been used: Django, PostgreSQL, Nginx, and Docker for the backend, and React, Redux-Toolkit, and Bootstrap for the frontend.',
+        'Created several scripts and programs using Python to automate and manage workflows.',
+        'Implemented Docker in the company for various services such as Redmine task tracker, Netbox, phpIPAM, and others. This containerization reduced deployment times from a week to 20 minutes, significantly improving workflow efficiency.',
+      ]}
+      tags={[
+        { tag: TAGS.FRAMEWORKS.DJANGO, tagType: TagType.FRAMEWORK },
+        { tag: TAGS.LANGUAGES.PYTHON, tagType: TagType.LANGUAGE },
+        {
+          tag: TAGS.INFRASTRUCTURE.POSTGRESQL,
+          tagType: TagType.INFRASTRUCTURE,
+        },
+        { tag: TAGS.LIBRARIES.REACT, tagType: TagType.LIBRARY },
+        { tag: TAGS.INFRASTRUCTURE.DOCKER, tagType: TagType.INFRASTRUCTURE },
+      ]}
+    />
+  </div>
+</section>

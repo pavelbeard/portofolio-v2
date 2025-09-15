@@ -21,11 +21,14 @@ const TAGS = {
   },
   LIBRARIES: {
     CLERK: 'Clerk',
+    AUTHJS: 'Auth.js',
     REACT: 'React',
     ZUSTAND: 'Zustand',
     BEAUTYFULSOUP: 'BeautifulSoup',
     TANSTACKQ: 'TanStack Query',
     GEMINIAI: 'Gemini AI',
+    GRAMMY: 'Grammy',
+    CHEERIO: 'Cheerio',
   },
   INFRASTRUCTURE: {
     MONGODB: 'MongoDB',
