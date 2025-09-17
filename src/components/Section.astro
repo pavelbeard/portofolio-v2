@@ -1,0 +1,14 @@
+---
+import { cn } from '@/lib/utils'
+
+const title = Astro.props.title as string
+const className = Astro.props.class as string | undefined
+---
+
+<section
+  class={cn('min-h-0 flex flex-col gap-y-4 print:gap-y-1 text-white print:text-black', className)}
+  aria-label={title}
+>
+  <h2 class="orbitron-bold text-xl">{title}</h2>
+  <slot />
+</section>

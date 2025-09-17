@@ -1,6 +1,6 @@
 ---
 import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer'
 import '../styles/global.css'
 ---
 
@@ -8,25 +8,26 @@ import '../styles/global.css'
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=5"
+    />
     <title>Pavel Borodin - Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body
-    class="bg-[url('../assets/bg.svg')] bg-cover bg-center flex flex-col min-h-screen"
-  >
+  <body class="">
     <main
-      class="mx-auto scroll-my-12 overflow-auto print:p-12 md:p-16"
+      class="bg-[url('../assets/bg.svg')] bg-cover relative mx-auto scroll-my-12 overflow-auto p-8 md:p-16 print:p-12"
       id="main-content"
     >
-      <section class="max-w-2xl">
+      <section class="mx-auto w-full max-w-2xl space-y-8 print:space-y-4">
         <Header />
-        <div class="space-y-10">
+        <div class="space-y-10 print:space-y-2">
           <slot />
         </div>
       </section>
-      <Footer />
+      <Footer client:load />
     </main>
   </body>
 </html>

@@ -512,3 +512,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.print-force-new-page {
+  page-break-after: always !important;
+}
