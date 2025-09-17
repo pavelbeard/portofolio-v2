@@ -10,7 +10,10 @@ const description = Astro.props.description as string
 const active = Astro.props.active as boolean
 ---
 
-<article class="h-full max-w-md">
+<article
+  class="h-full max-w-md text-white print:text-black"
+  id={`side-project-${title}`}
+>
   <div
     class="h-full flex flex-col justify-between space-y-2 rounded-xl border border-purple-400/20 bg-purple-600/20 p-3"
     role="article"
@@ -21,13 +24,13 @@ const active = Astro.props.active as boolean
           link ? (
             <a
               href={link}
-              class="orbitron-regular text-[12px] hover:underline text-white"
+              class="orbitron-regular text-[12px] hover:underline"
               target="_blank"
             >
               {title}
             </a>
           ) : (
-            <span class="orbitron-regular text-[12px] text-white">{title}</span>
+            <span class="orbitron-regular text-[12px]">{title}</span>
           )
         }
         <span
@@ -36,10 +39,7 @@ const active = Astro.props.active as boolean
             active ? 'bg-green-500' : 'bg-red-500'
           )}></span>
       </h2>
-      <p
-        aria-label="project description"
-        class="sansation-light text-xs text-white/80"
-      >
+      <p aria-label="project description" class="sansation-light text-xs">
         {description}
       </p>
       {
@@ -48,7 +48,7 @@ const active = Astro.props.active as boolean
             {links.map((item) => (
               <a
                 href={item.link}
-                class="orbitron-regular text-xs hover:underline text-white"
+                class="orbitron-regular text-xs hover:underline"
                 target="_blank"
               >
                 {item.title}

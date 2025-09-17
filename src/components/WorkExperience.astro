@@ -10,8 +10,8 @@ const tags = Astro.props.tags as { tag: string; tagType: string }[]
 const link = Astro.props.link as string | undefined
 ---
 
-<article class="text-white space-y-2">
-  <header class="flex flex-col gap-y-1">
+<article class="text-white print:text-black space-y-2">
+  <header class="flex flex-col gap-y-2 print:gap-y-1">
     <div class="flex items-center gap-x-4">
       {
         link ? (
@@ -32,9 +32,6 @@ const link = Astro.props.link as string | undefined
           </h2>
         )
       }
-      <div class="flex items-center gap-x-1 flex-0">
-        {tags.map(({ tag, tagType }) => <Tag tagType={tagType} name={tag} />)}
-      </div>
       <p class="flex-1 text-right text-sm sansation-regular">
         {
           endDate !== undefined && endDate !== ''
@@ -43,11 +40,17 @@ const link = Astro.props.link as string | undefined
         }
       </p>
     </div>
-
+    <div class="flex flex-wrap md:flex-nowrap items-center gap-1 flex-0">
+      {tags.map(({ tag, tagType }) => <Tag tagType={tagType} name={tag} />)}
+    </div>
     <h3 class="text-sm sansation-regular">{position}</h3>
   </header>
 
   <ul class="list-disc list-inside space-y-1">
-    {responsibilities.map((responsibility) => <li class="sansation-light text-xs">{responsibility}</li>)}
+    {
+      responsibilities.map((responsibility) => (
+        <li class="sansation-light text-xs">{responsibility}</li>
+      ))
+    }
   </ul>
 </article>
